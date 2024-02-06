@@ -1,7 +1,10 @@
 import os
 import sys
-from src.logger import logging 
-from src.exception import CustomException
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from logger import logging 
+from exception import CustomException
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -21,7 +24,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method")
         try:
-            df=pd.read_csv('notebook\data\stud.csv')
+            df=pd.read_csv('notebook/data/stud.csv')
             logging.info('Dataset file has been read as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
@@ -43,8 +46,3 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e,sys)
-
-
-if __name__=="__main__":
-    obj=DataIngestion()
-    obj.initiate_data_ingestion()
