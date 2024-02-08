@@ -110,6 +110,11 @@ class DataTransformation:
             test_arr = np.c_[
                 input_feature_test_arr, np.array(target_feature_test_df)
             ]
+            # combine the preprocessed input features with the target features (labels) for 
+            # both the training and test datasets into single NumPy arrays, respectively. 
+            # This is typically done to prepare the data for modeling, where you need both 
+            # the input features and the target variable in a structured format
+            # np.c_ is numpy concacatenation. 
 
             logging.info(f"Saved preprocessing object.")
 
