@@ -85,6 +85,7 @@ class DataTransformation:
             logging.info("Obtaining preprocessing object")
 
             preprocessing_obj=self.get_data_transformer_object()
+            #preprocessing_obj contains all the required parameters/pipeline to transform the data 
 
             target_column_name="math_score"
             numerical_columns = ["writing_score", "reading_score"]
@@ -103,6 +104,7 @@ class DataTransformation:
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
             # 'fit' calculates and stores the required parameters needed for training
             # 'transform' apply the transformation 
+            # 'transform' is a method from ColumnTransformer 
 
             train_arr = np.c_[
                 input_feature_train_arr, np.array(target_feature_train_df)
