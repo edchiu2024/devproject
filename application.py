@@ -1,5 +1,5 @@
 # required file for AWS Elastic Beanstalk 
-from flask import Flask,request,render_template, send_from_directory 
+from flask import Flask,request,render_template ,send_from_directory 
 import sys
 import numpy as np
 import pandas as pd
@@ -10,8 +10,8 @@ from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
 
-#application=Flask(__name__)
-app = Flask(__name__, static_folder='./build', static_url_path='/')
+#app=Flask(__name__)
+app = Flask(__name__, static_folder='/build', static_url_path='/')
 
 
 #app=application  

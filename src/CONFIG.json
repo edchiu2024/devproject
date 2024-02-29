@@ -1,0 +1,13 @@
+{
+    "REDDIT":{
+        "DATA_API_URL":"https://oauth.reddit.com/api",
+        "AUTHENTICATION_API_URL":"https://www.reddit.com/api/v1",
+        "PUBLIC_API_URL":"https://oauth.reddit.com/r/",
+        "REFRESH_TOKEN":"336646860078-ZpuEMbkUR3byADYFXW8p6QGVG86REQ",
+        "CLIENT_ID":"bYlfSp5N9aR4UZw9mfEgRQ",
+        "CLIENT_SECRET":"a-lBj-7IcOLn4Jd3n8_LJlUl3YybiA",        
+        "UA":"bengabooTest/0.1 by bengaboo",
+        "JSON_FILE_NAME": "trimmed_reddit.json"
+    }
+
+}
