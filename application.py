@@ -9,24 +9,24 @@ from src.pipeline.read_pipeline import ReadPipeline
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
-application=Flask(__name__)
+application=Flask(__name__, static_folder='/build', static_url_path='/')
 app=application  
-#app = Flask(__name__, static_folder='/build', static_url_path='/')
+
 
 
 ## Route
 
-#@app.route('/')
-#def index():
-#    return send_from_directory(app.static_folder, 'index.html')
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/members')
 def members():
     return {"members":["Member1","Member2","Member3"]}
 
-def index():
-    return render_template('index.html')
+#def index():
+#    return render_template('index.html')
 
 @app.route('/reddit')
 def reddit_read():
