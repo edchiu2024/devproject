@@ -9,12 +9,10 @@ from src.pipeline.read_pipeline import ReadPipeline
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
-
-app=Flask(__name__)
+application=Flask(__name__)
+app=application  
 #app = Flask(__name__, static_folder='/build', static_url_path='/')
 
-
-#app=application  
 
 ## Route
 
