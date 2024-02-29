@@ -9,7 +9,7 @@ from src.pipeline.read_pipeline import ReadPipeline
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
-application=Flask(__name__, static_folder='/react_build', static_url_path='/')
+application=Flask(__name__, static_folder='./react_build', static_url_path='/')
 app=application  
 
 
