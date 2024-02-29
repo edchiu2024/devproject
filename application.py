@@ -1,23 +1,26 @@
 # required file for AWS Elastic Beanstalk 
-from flask import Flask,request,render_template 
+from flask import Flask,request,render_template, send_from_directory 
 import sys
 import numpy as np
 import pandas as pd
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
+from src.pipeline.read_pipeline import ReadPipeline
 
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
 
-application=Flask(__name__)
+#application=Flask(__name__)
+app = Flask(__name__, static_folder='./build', static_url_path='/')
 
-app=application  
+
+#app=application  
 
 ## Route
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/members')
@@ -27,9 +30,11 @@ def members():
 def index():
     return render_template('index.html')
 
-@app.route('/about')
-def about():
-    return render_template('index.html')
+@app.route('/reddit')
+def reddit_read():
+    read_pipeline=ReadPipeline()
+    results=read_pipeline.read()
+    return results
 
 @app.route('/predictdata', methods=['GET','POST'])
 def predict_datapoint():

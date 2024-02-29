@@ -1,5 +1,9 @@
 import os
 import sys
+import requests
+from requests.auth import HTTPBasicAuth
+
+import json
 import dill
 import pickle
 import numpy as np
@@ -12,6 +16,37 @@ from exception import CustomException
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from logger import logging 
 from exception import CustomException
+
+def load_config():
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    config_path = os.path.join(dir_path, 'CONFIG.json')
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+    return config
+
+def get_reddit_access_token():
+    config = load_config()
+    url = config['REDDIT']['AUTHENTICATION_API_URL']+"/access_token"
+    refresh_token = config['REDDIT']['REFRESH_TOKEN']
+    client_id = config['REDDIT']['CLIENT_ID']
+    client_secret = config['REDDIT']['CLIENT_SECRET']
+    UA = config['REDDIT']['UA']
+    data = {
+        'grant_type': 'refresh_token',
+        'refresh_token': refresh_token,
+    }
+    headers = {
+        'User-Agent': UA
+    }
+    auth = HTTPBasicAuth(client_id, client_secret)
+    try:
+        response = requests.post(url, data=data, auth=auth, headers=headers)
+        access_token_data = response.json()
+        return access_token_data['access_token']
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+    
 
 def save_object(file_path, obj):
     try:
