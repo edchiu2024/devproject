@@ -10,17 +10,17 @@ from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
 
 
-#app=Flask(__name__)
-app = Flask(__name__, static_folder='/build', static_url_path='/')
+app=Flask(__name__)
+#app = Flask(__name__, static_folder='/build', static_url_path='/')
 
 
 #app=application  
 
 ## Route
 
-@app.route('/')
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
+#@app.route('/')
+#def index():
+#    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/members')
