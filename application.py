@@ -1,6 +1,6 @@
 # required file for AWS Elastic Beanstalk 
 from flask import Flask,request,render_template ,send_from_directory 
-from flask_cors import CORS
+#from flask_cors import CORS
 
 import sys
 import numpy as np
