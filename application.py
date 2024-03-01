@@ -8,10 +8,15 @@ from src.pipeline.read_pipeline import ReadPipeline
 
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
+from flask_cors import CORS
+
+
+#app = Flask(__name__)
 
 application=Flask(__name__, static_folder='./react_build', static_url_path='/')
 app=application  
 
+CORS(app, resources={r"/api/*": {"origins": "https://edchiu.io"}})
 
 
 ## Route
@@ -28,7 +33,7 @@ def members():
 #def index():
 #    return render_template('index.html')
 
-@app.route('/reddit')
+@app.route('/api/reddit')
 def reddit_read():
     read_pipeline=ReadPipeline()
     results=read_pipeline.read()
