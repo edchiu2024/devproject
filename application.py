@@ -13,7 +13,7 @@ from src.exception import CustomException
 
 application=Flask(__name__, static_folder='./react_build', static_url_path='/')
 app=application  
-CORS(app, resources={r"/api/*": {"origins": "https://edchiu.io"}})
+CORS(app)
 
 
 
