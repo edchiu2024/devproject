@@ -1,5 +1,7 @@
 # required file for AWS Elastic Beanstalk 
 from flask import Flask,request,render_template ,send_from_directory 
+from flask_cors import CORS
+
 import sys
 import numpy as np
 import pandas as pd
@@ -11,6 +13,7 @@ from src.exception import CustomException
 
 application=Flask(__name__, static_folder='./react_build', static_url_path='/')
 app=application  
+CORS(app, resources={r"/api/*": {"origins": "https://edchiu.io"}})
 
 
 
