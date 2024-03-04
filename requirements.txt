@@ -5,5 +5,4 @@ matplotlib
 scikit-learn
 dill
 Flask
-torch
 #-e .
