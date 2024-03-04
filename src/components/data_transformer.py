@@ -88,13 +88,13 @@ class Transformer:
     
 
 
-if __name__=="__main__":
+#if __name__=="__main__":
      
-    data="Decided for the first time to try some cheap puts. I’ve been buying calls from Nov 1st to Jan (140-210) I missed the run from 210 to 238. When the ceo of panw said there clients are facing spending exhaustion I knew it was the case at a few other companies. Bought 5 minutes before close yesterday. I did not expect the figurde head who everyone loved to resign, got lucky there. I did buy some deep itm calls this morning as well. I think the new ceo will do good especially coming from Google. Sold both puts this morning."
-    obj=Transformer()
-    output = obj.sentiment_analyzer(data)
+    #data="Decided for the first time to try some cheap puts. I’ve been buying calls from Nov 1st to Jan (140-210) I missed the run from 210 to 238. When the ceo of panw said there clients are facing spending exhaustion I knew it was the case at a few other companies. Bought 5 minutes before close yesterday. I did not expect the figurde head who everyone loved to resign, got lucky there. I did buy some deep itm calls this morning as well. I think the new ceo will do good especially coming from Google. Sold both puts this morning."
+    #obj=Transformer()
+    #output = obj.sentiment_analyzer(data)
 
-    print(output)
+    #print(output)
   
 
     

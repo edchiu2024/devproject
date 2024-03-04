@@ -173,11 +173,11 @@ class DataExtraction:
                 flattened.extend(self._flatten_comments(comment['replies']))  # Recursively process replies
         return flattened   
       
-if __name__=="__main__":
+#if __name__=="__main__":
      
 
-    obj=DataExtraction()
-    print(obj.post_data_extract())
+    #obj=DataExtraction()
+    #print(obj.post_data_extract())
 
     #train_data,test_data=obj.initiate_data_ingestion()
 
