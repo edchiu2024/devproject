@@ -19,7 +19,7 @@ class DataExtraction:
         self.sub_reddit=['stocks','wallstreetbets','investing']
         #self.sub_reddit=['stocks']
         self.today_date = datetime.now().strftime('%Y-%m-%d')
-        self.post_limit=30
+        self.post_limit=20
         self.post_interval="day"
         self.trimmed_data = [] 
         self.headers = {
@@ -79,7 +79,7 @@ class DataExtraction:
                         'downs': post_data['downs'], 
                         'score': post_data['score'],
                         'permalink': f"https://www.reddit.com{post_data['permalink']}",
-                        'comments': comments
+                        #'comments': comments
                         
                     }
 
