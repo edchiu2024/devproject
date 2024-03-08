@@ -19,7 +19,7 @@ from exception import CustomException
 
 def load_config():
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    config_path = os.path.join(dir_path, 'CONFIG.json')
+    config_path = os.path.join(dir_path, 'config.json')
     with open(config_path, 'r') as f:
         config = json.load(f)
     return config
