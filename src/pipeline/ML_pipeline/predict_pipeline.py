@@ -1,10 +1,11 @@
 import sys
 import os
 import pandas as pd
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from logger import logging 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from exception import CustomException
 from utils import save_object, load_object
+from logger import logging 
 
 class PredictPipeline:
     def __init__(self):

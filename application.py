@@ -5,8 +5,8 @@ from flask import Flask,request,render_template ,send_from_directory
 import sys
 import numpy as np
 import pandas as pd
-from src.pipeline.predict_pipeline import CustomData, PredictPipeline
-from src.pipeline.read_pipeline import ReadPipeline
+from src.pipeline.ML_pipeline.predict_pipeline import CustomData, PredictPipeline
+from src.pipeline.reddit_pipeline.read_pipeline import ReadPipeline
 
 from sklearn.preprocessing import StandardScaler
 from src.exception import CustomException
@@ -37,6 +37,7 @@ def reddit_read():
     results=read_pipeline.read()
     return results
 
+# For ML project. Imcomplete
 @app.route('/predictdata', methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
