@@ -1,11 +1,12 @@
 # ETL job for Reddit interview
-from data_transformer import Transformer
 import os
 import json
 import sys
 import requests
+from data_transformer import Transformer
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 from logger import logging 
 from exception import CustomException
 from datetime import datetime
@@ -93,7 +94,7 @@ class DataExtraction:
                 raise CustomException(e,sys)
             
         try:
-            trimmed_data_path = os.path.join('../../artifacts', self.trimmed_data_filename)
+            trimmed_data_path = os.path.join('../../../artifacts', self.trimmed_data_filename)
             logging.info(f"Saving to a local json file")
             with open(trimmed_data_path, 'w') as outfile:
                 json.dump(self.trimmed_data, outfile, indent=4)

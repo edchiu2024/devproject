@@ -27,9 +27,9 @@ def load_config():
 def get_reddit_access_token():
     config = load_config()
     url = config['REDDIT']['AUTHENTICATION_API_URL']+"/access_token"
-    refresh_token = config['REDDIT']['REFRESH_TOKEN']
-    client_id = config['REDDIT']['CLIENT_ID']
-    client_secret = config['REDDIT']['CLIENT_SECRET']
+    refresh_token = os.environ.get('REFRESH_TOKEN') 
+    client_id = os.environ.get('CLIENT_ID') 
+    client_secret = os.environ.get('CLIENT_SECRET') 
     UA = config['REDDIT']['UA']
     data = {
         'grant_type': 'refresh_token',

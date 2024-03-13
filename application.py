@@ -28,6 +28,10 @@ def index():
 def members():
     return {"members":["Member1","Member2","Member3"]}
 
+@app.route('/bamboo')
+def bamboo():
+    return send_from_directory(app.static_folder, 'bamboo.html')
+
 #def index():
 #    return render_template('index.html')
 

@@ -8,9 +8,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
-from components.data_transformation import DataTransformation
-from components.data_transformation import DataTransformationConfig
-from components.model_trainer import ModelTrainer
+from src.components.ML_components.data_transformation import DataTransformation
+from src.components.ML_components.data_transformation import DataTransformationConfig
+from src.components.ML_components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
